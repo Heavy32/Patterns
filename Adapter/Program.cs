@@ -6,7 +6,8 @@ namespace Adapter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            AdapterSuperSecretClass a = new AdapterSuperSecretClass();
+            a.Show();
         }
     }
 
@@ -27,7 +28,7 @@ namespace Adapter
     {
         public void Show()
         {
-            base.SecretAction();
+            SecretAction();
         }
     }
 }
