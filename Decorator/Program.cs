@@ -7,50 +7,75 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            string text = "Hey yo";
-            Console.WriteLine(new ToUpperText(new ReplaceSpacesWithLog()).GetFormattedText(text));
-
+            string text = "FUCK YOU https://forums.envato.com/t/check-if-string-is-a-url/75760/2";
+            Console.WriteLine(new ReplaceBadWords(new RemoveCapsLockRage(new AntiSpam())).Filter(text));
         }
     }
 
-    public abstract class TextFormator
+    public abstract class TextFilter
     {
-        private TextFormator _textFormator;
+        private TextFilter textFilter;
 
-        protected TextFormator(TextFormator textFormator = null)
+        protected TextFilter(TextFilter textFilter = null)
         {
-            _textFormator = textFormator;
+            this.textFilter = textFilter;
         }
 
-        public virtual string GetFormattedText(string text)
+        public virtual string Filter(string text)
         {
-            if (_textFormator != null)
-            {
-                text = _textFormator.GetFormattedText(text);
-            }
+            if (textFilter != null)
+                text = textFilter.Filter(text);
 
             return text;
         }
     }
 
-    class ReplaceSpacesWithLog : TextFormator
+    public class ReplaceBadWords : TextFilter
     {
-        public ReplaceSpacesWithLog(TextFormator textFormator = null) : base(textFormator) { }
+        public ReplaceBadWords(TextFilter textFilter = null) : base(textFilter) { }
 
-        public override string GetFormattedText(string text)
+        public override string Filter(string text)
         {
-            Console.WriteLine($"All ' ' will replace to '+'");
-            return base.GetFormattedText(text)?.Replace(' ', '+');
+            text = base.Filter(text);
+
+            if (text.Contains("fuck"))
+                text = text.Replace("fuck", "love");
+
+            if (text.Contains("moron"))
+                text = text.Replace("moron", "honey");
+
+            if (text.Contains("fucking"))
+                text = text.Replace("fucking", "beloved");
+
+            if (text.Contains("douchebag"))
+                text = text.Replace("douchebag", "the best person alive");
+
+            return text;
         }
     }
 
-    public class ToUpperText : TextFormator
+    public class RemoveCapsLockRage : TextFilter
     {
-        public ToUpperText(TextFormator textFormator = null) : base(textFormator) { }
+        public RemoveCapsLockRage(TextFilter textFilter = null) : base(textFilter) { }
 
-        public override string GetFormattedText(string text)
+        public override string Filter(string text)
         {
-            return base.GetFormattedText(text).ToUpper();
+            return base.Filter(text).ToLower();
+        }
+    }
+
+    public class AntiSpam : TextFilter
+    {
+        public AntiSpam(TextFilter textFilter = null) : base(textFilter) { }
+
+        public override string Filter(string text)
+        {
+            text = base.Filter(text);
+
+            if (text.Contains("https://"))
+                text = "Message has been removed because of spam";
+
+            return text;
         }
     }
 }
