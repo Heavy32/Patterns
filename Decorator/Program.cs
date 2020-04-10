@@ -7,7 +7,8 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            IMeal meal = new Potato(new Fish());          
+            TextFilter textFilter = new EmojiDecorator(new RemoveCapsLockRage());
+            string text = textFilter.Filter("BAZINGA :-*");
         }
     }   
 }
