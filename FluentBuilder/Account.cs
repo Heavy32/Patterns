@@ -9,7 +9,7 @@ namespace FluentBuilder
         protected string name;
         protected int age;
         protected string nickName;
-        protected bool isMarried; //not instal and always false?
+        protected bool isMarried; //?????
 
         public class AccountBuilder
         {
