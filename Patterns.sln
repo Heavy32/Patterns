@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 <<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentBuilder", "FluentBuilder\FluentBuilder.csproj", "{73BEAD42-6B66-4E92-A87F-8B2768B8311F}"
 EndProject
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Decorator.csproj", "{39F44701-784E-4BFB-9D48-72551F1C9F0E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter\Adapter.csproj", "{85CA13BB-1512-4E2E-89CE-EE3ED8A732DB}"
@@ -16,6 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "Factory\Factory.
 =======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentBuilder", "FluentBuilder\FluentBuilder.csproj", "{73BEAD42-6B66-4E92-A87F-8B2768B8311F}"
 >>>>>>> parent of f7bd476... add decorator
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{39F44701-784E-4BFB-9D48-72551F1C9F0E}"
+>>>>>>> parent of c5e111b... Add Chat filter Decorator
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +36,7 @@ Global
 		{39F44701-784E-4BFB-9D48-72551F1C9F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39F44701-784E-4BFB-9D48-72551F1C9F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39F44701-784E-4BFB-9D48-72551F1C9F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{85CA13BB-1512-4E2E-89CE-EE3ED8A732DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{85CA13BB-1512-4E2E-89CE-EE3ED8A732DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85CA13BB-1512-4E2E-89CE-EE3ED8A732DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,6 +51,8 @@ Global
 		{6604026A-7C11-4D1D-84C2-3E030F674C1B}.Release|Any CPU.Build.0 = Release|Any CPU
 =======
 >>>>>>> parent of f7bd476... add decorator
+=======
+>>>>>>> parent of c5e111b... Add Chat filter Decorator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
