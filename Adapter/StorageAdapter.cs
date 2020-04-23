@@ -13,9 +13,7 @@ namespace Adapter
 
         public void GetFormattedItem()
         {
-            Console.WriteLine("--------------");
             storage.GetItem();
-            Console.WriteLine("--------------");
         }
     }
 
