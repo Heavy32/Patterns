@@ -6,7 +6,7 @@ namespace Singleton
 {
     public sealed class LoggerSingleton : IDisposable
     {
-        private static readonly Lazy<LoggerSingleton> instance = new Lazy<LoggerSingleton>(() => new LoggerSingleton());
+        public static readonly Lazy<LoggerSingleton> instance = new Lazy<LoggerSingleton>(() => new LoggerSingleton());
         private bool disposed = false;
 
         private LoggerSingleton()
@@ -45,7 +45,6 @@ namespace Singleton
             disposed = true;
         }
 
-        public static LoggerSingleton Instance { get => instance.Value; }
         public int LogID { get; set; } = 1;
         public StreamWriter Logger { get; set; }
     }
