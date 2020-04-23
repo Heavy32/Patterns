@@ -1,4 +1,6 @@
-﻿namespace Decorator
+﻿using System;
+
+namespace Decorator
 {
     public class EmojiDecorator : TextFilter
     {
@@ -7,15 +9,15 @@
         public override string Filter(string text)
         {
             text = base.Filter(text);
-
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
             if (text.Contains(":-)"))
-                text = text.Replace(":-)", "U+1F60A");
+                text = text.Replace(":-)", "\x263A");
 
-            if (text.Contains(":-D"))
-                text = text.Replace(":-D", "U+1F601");
+            if (text.Contains(":-("))
+                text = text.Replace(":-(", "\x2639");
 
-            if (text.Contains(":-*"))
-                text = text.Replace(":-*", "U+1F618");
+            if (text.Contains("<3"))
+                text = text.Replace("<3", "\x2764");
 
             return text;
         }
