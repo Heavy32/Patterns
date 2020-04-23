@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace Adapter
+﻿namespace Adapter
 {
     class StorageAdapter : IStorage
     {
         private readonly Storage storage;
 
-        public StorageAdapter()
+        public StorageAdapter(Storage storage)
         {
-            storage = new Storage();
+            this.storage = storage;
         }
 
         public void GetFormattedItem()
