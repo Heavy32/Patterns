@@ -7,7 +7,7 @@ namespace Adapter
         static void Main(string[] args)
         {
             AdapterSuperSecretClass a = new AdapterSuperSecretClass();
-            a.Show();
+            a.Action();
         }
     }
 
