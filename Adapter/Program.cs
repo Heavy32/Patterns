@@ -21,7 +21,7 @@ namespace Adapter
 
     interface IShow
     {
-        public void Show();
+        public void Action();
     }
 
     class AdapterSuperSecretClass : SuperSecretClass, IShow
