@@ -7,10 +7,8 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            TextFilter textFilter = new EmojiDecorator();
-            Console.WriteLine(textFilter.Filter("BAZINGA :-)"));
-            Console.WriteLine(textFilter.Filter("PATHETIC :-("));
-            Console.WriteLine(textFilter.Filter("I <3 C# "));
+            string text = "FUCK YOU https://forums.envato.com/t/check-if-string-is-a-url/75760/2";
+            Console.WriteLine(new ReplaceBadWords(new RemoveCapsLockRage(new AntiSpam())).Filter(text));
         }
     }   
 }
