@@ -1,13 +1,13 @@
 ﻿using System;
 
 namespace Adapter
-{   //NOT FINISHED YET
+{
     class Program
     {
         static void Main(string[] args)
         {
             AdapterSuperSecretClass a = new AdapterSuperSecretClass();
-            a.Action();
+            a.Show();
         }
     }
 
@@ -21,12 +21,12 @@ namespace Adapter
 
     interface IShow
     {
-        public void Action();
+        public void Show();
     }
 
     class AdapterSuperSecretClass : SuperSecretClass, IShow
     {
-        public void Action()
+        public void Show()
         {
             SecretAction();
         }
