@@ -6,8 +6,7 @@ namespace Singleton
 {
     public sealed class AccountCounter
     {
-        private static readonly Lazy<AccountCounter> lazy = new Lazy<AccountCounter>(() => new AccountCounter());
-        
+        private static readonly Lazy<AccountCounter> lazy = new Lazy<AccountCounter>(() => new AccountCounter());        
         public static AccountCounter Instance { get { return lazy.Value; } }
         public int count = 0;
 
