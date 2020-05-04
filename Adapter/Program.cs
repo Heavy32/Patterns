@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Adapter
-{
+{   //NOT FINISHED YET
     class Program
     {
         static void Main(string[] args)
