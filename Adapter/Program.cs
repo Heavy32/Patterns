@@ -26,7 +26,7 @@ namespace Adapter
 
     class AdapterSuperSecretClass : SuperSecretClass, IShow
     {
-        public void Show()
+        public void Action()
         {
             SecretAction();
         }
