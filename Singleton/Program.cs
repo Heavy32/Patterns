@@ -1,7 +1,9 @@
-﻿using System;
+﻿using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
+using System;
 
 namespace Singleton
 {
@@ -9,14 +11,14 @@ namespace Singleton
     {
         static void Main()
         {
-            (new Thread(() =>
-            {
-                LoggerSingleton.instance.Value.WriteInLog("Sup");
-            })).Start();
+            Task t1 = new Task(() => LoggerSingleton.instance.Value.WriteInLog("Hello"));
+            Task t2 = new Task(() => LoggerSingleton.instance.Value.WriteInLog("Leha"));
 
-            LoggerSingleton.instance.Value.WriteInLog("Nigga");
-            Console.Read();
-            LoggerSingleton.instance.Value.FinishLogger();
+            t1.Start();
+            t1.Wait();
+
+            t2.Start();
+            t2.Wait();
         }
     }
 }
