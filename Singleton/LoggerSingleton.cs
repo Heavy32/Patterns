@@ -4,48 +4,23 @@ using System.IO;
 
 namespace Singleton
 {
-    public sealed class LoggerSingleton : IDisposable
+    public sealed class LoggerSingleton
     {
         public static readonly Lazy<LoggerSingleton> instance = new Lazy<LoggerSingleton>(() => new LoggerSingleton());
-        private bool disposed = false;
 
-        private LoggerSingleton()
-        {
-            Logger = new StreamWriter("Logger.txt");
-        }
+        private LoggerSingleton() { }
 
         public void WriteInLog(string logMessage)
         {
             DateTime now = DateTime.Now;
-            Console.WriteLine(logMessage, LogID);
-            Logger.Write("Log ID: " + LogID++ + " Date:"  + now + " " + logMessage + "\n");
-        }
 
-        public void FinishLogger()
-        {
-            Dispose();
-        }
+            string writePath = @"~\Singleton\Logger.txt";
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(Logger);
-        }
+            using StreamWriter logger = new StreamWriter(writePath, true, System.Text.Encoding.Default);
+                logger.WriteLine("Log ID: " + LogID++ + " Date:" + now + " " + logMessage);
 
-        private void Dispose(bool disposing)
-        {
-            if (disposed)
-                return;
-
-            if (disposing)
-            {
-                Logger.Dispose();
-            }
-
-            disposed = true;
         }
 
         public int LogID { get; set; } = 1;
-        public StreamWriter Logger { get; set; }
     }
 }
