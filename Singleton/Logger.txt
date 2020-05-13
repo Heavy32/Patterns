@@ -1,3 +1,2 @@
-
-Log ID: 1 Date:13.05.2020 23:32:32 Leha
-Log ID: 2 Date:13.05.2020 23:32:32 Hello
+Log ID: 1 Date:13.05.2020 23:34:45 Leha
+Log ID: 2 Date:13.05.2020 23:34:45 Hello

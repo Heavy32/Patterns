@@ -6,7 +6,7 @@ namespace Singleton
     public sealed class LoggerSingleton
     {
         public static readonly Lazy<LoggerSingleton> instance = new Lazy<LoggerSingleton>(() => new LoggerSingleton());
-        private static object syncRoot = new object();
+        private static readonly object syncRoot = new object();
 
         private LoggerSingleton() { }
 
@@ -18,12 +18,9 @@ namespace Singleton
 
             lock (syncRoot)
             {
-                using (StreamWriter logger = new StreamWriter(writePath, true, System.Text.Encoding.Default))
-                {
+                using StreamWriter logger = new StreamWriter(writePath, true, System.Text.Encoding.Default);
                     logger.WriteLine("Log ID: " + LogID++ + " Date:" + now + " " + logMessage);
-                }
-            }
-           
+            }           
         }
 
         public int LogID { get; set; } = 1;
