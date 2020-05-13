@@ -11,14 +11,12 @@ namespace Singleton
     {
         static void Main()
         {
-            Task t1 = new Task(() => LoggerSingleton.instance.Value.WriteInLog("Hello"));
-            Task t2 = new Task(() => LoggerSingleton.instance.Value.WriteInLog("Leha"));
+            Task.Run(() =>
+            {
+                LoggerSingleton.instance.Value.WriteInLog("Hello");
+            });
 
-            t1.Start();
-            t1.Wait();
-
-            t2.Start();
-            t2.Wait();
+            LoggerSingleton.instance.Value.WriteInLog("Leha");
         }
     }
 }
