@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Decorator
 {
@@ -7,12 +6,9 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            MessageBox messageBox = new MessageBox
-            {
-                Text = "I love you <3"
-            };
-
-            Console.WriteLine(messageBox.Text);
+            Message message = new SimpleMessage("I love you <3");
+            message = new EmojiMessageDecorator(message);
+            Console.WriteLine(message.GetMessage());
         }
     }   
 }
