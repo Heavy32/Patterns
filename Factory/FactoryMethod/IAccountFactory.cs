@@ -1,6 +1,6 @@
 ﻿namespace Factory
 {
-    public interface IAccountBuilder
+    public interface IAccountFactory
     {
         public abstract Account Create();
     }

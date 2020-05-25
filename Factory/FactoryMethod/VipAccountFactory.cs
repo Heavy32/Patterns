@@ -1,12 +1,12 @@
 ﻿namespace Factory
 {
-    class VipAccountBuilder : IAccountBuilder
+    class VipAccountFactory : IAccountFactory
     {
         private readonly string name;
         private readonly int age;
         private readonly string profilePicture;
 
-        public VipAccountBuilder(string name, int age, string profilePicture)
+        public VipAccountFactory(string name, int age, string profilePicture)
         {
             this.name = name;
             this.age = age;

@@ -1,11 +1,11 @@
 ﻿namespace Factory
 {
-    class BasicAccountBuilder : IAccountBuilder
+    class BasicAccountFactory : IAccountFactory
     {
         private readonly string name;
         private readonly int age;
 
-        public BasicAccountBuilder(string name, int age)
+        public BasicAccountFactory(string name, int age)
         {
             this.name = name;
             this.age = age;
