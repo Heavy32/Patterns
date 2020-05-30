@@ -6,9 +6,11 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            Message message = new SimpleMessage("I love you <3");
-            message = new EmojiMessageDecorator(message);
-            Console.WriteLine(message.GetMessage());
+            IMessage m = new SimpleMessage();
+            m.SetMessage("I love you <3");
+
+            m = new EmojiDecorator(m);
+            Console.WriteLine(m.GetMessage());
         }
     }   
 }

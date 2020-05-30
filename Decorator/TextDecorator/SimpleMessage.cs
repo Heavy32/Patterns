@@ -1,13 +1,17 @@
 ﻿namespace Decorator
 {
-    class SimpleMessage : Message
+    public class SimpleMessage : IMessage
     {
-        public SimpleMessage(string text) : base(text)
-        { }
+        private string text;
 
-        public override string GetMessage()
+        public string GetMessage()
         {
-            return Text;
+            return text;
+        }
+
+        public void SetMessage(string text)
+        {
+            this.text = text;
         }
     }
 }

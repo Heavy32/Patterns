@@ -2,21 +2,11 @@
 
 namespace Decorator
 {
-    class EmojiMessageDecorator : MessageDecorator
+    public class EmojiDecorator : MessageDecorator
     {
-        public EmojiMessageDecorator(Message message) : base(message)
+        public EmojiDecorator(IMessage message) : base(message)
         {
-            base.message = EmojiFilter(message); 
-        }
-
-        public override string GetMessage()
-        {
-            return EmojiFilter(message).Text;
-        }
-
-        private Message EmojiFilter(Message message)
-        {
-            string text = message.Text;
+            string text = message.GetMessage();
 
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             if (text.Contains(":-)"))
@@ -28,8 +18,7 @@ namespace Decorator
             if (text.Contains("<3"))
                 text = text.Replace("<3", "\x2764");
 
-            message.Text = text;
-            return message;
+            message.SetMessage(text);
         }
     }
 }
