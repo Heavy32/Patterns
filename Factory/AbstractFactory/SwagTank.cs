@@ -1,4 +1,4 @@
-﻿namespace Factory.AbstractFactory
+﻿namespace Factory
 {
     public class SwagTank : TankFactory
     {

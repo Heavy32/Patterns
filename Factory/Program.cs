@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Factory.AbstractFactory
+namespace Factory
 {
     class Program
     {
         static void Main(string[] args)
         {
-            VipAccountFactory vipAccountFactory = new VipAccountFactory("Tom", 20, "King.jpeg");
+            IAccountFactory vipAccountFactory = new VipAccountFactory("Tom", 20, "King.jpeg");
             Account vipAccount = vipAccountFactory.Create();
 
             Tank heavyTank = new Tank(new HeavyTankFactory());

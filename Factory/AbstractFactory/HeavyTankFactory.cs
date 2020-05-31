@@ -1,5 +1,5 @@
 ﻿
-namespace Factory.AbstractFactory
+namespace Factory
 {
     public class HeavyTankFactory : TankFactory
     {

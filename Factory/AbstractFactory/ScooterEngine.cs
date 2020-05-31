@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Factory.AbstractFactory
+namespace Factory
 {
     public class ScooterEngine : Engine
     {
