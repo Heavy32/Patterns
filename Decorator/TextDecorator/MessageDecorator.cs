@@ -1,6 +1,6 @@
 ﻿namespace Decorator
 {
-    public abstract class MessageDecorator : IMessage
+    public class MessageDecorator : IMessage
     {
         protected IMessage message;
 
@@ -9,9 +9,12 @@
             this.message = message;
         }
 
-        public abstract string GetMessage();
+        public virtual string GetMessage()
+        {
+            return message.GetMessage();
+        }
 
-        public void SetMessage(string text)
+        public virtual void SetMessage(string text)
         {
             message.SetMessage(text);
         }
