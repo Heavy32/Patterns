@@ -2,12 +2,14 @@
 
 namespace Decorator
 {
-    public class EmojiDecorator : MessageDecorator
+    public class EmojiDecorator : IMessageDecorator
     {
-        public EmojiDecorator(IMessage message) : base(message)
-        { }
-
-        public override string GetMessage()
+        private IMessage message;
+        public EmojiDecorator(IMessage message)
+        {
+            this.message = message;
+        }
+        public void Decorate()
         {
             string text = message.GetMessage();
 
@@ -21,7 +23,18 @@ namespace Decorator
             if (text.Contains("<3"))
                 text = text.Replace("<3", "\x2764");
 
-            return text;
+            message.SetMessage(text);
+        }
+
+        public string GetMessage()
+        {
+            Decorate();
+            return message.GetMessage();
+        }
+
+        public void SetMessage(string text)
+        {
+            message.SetMessage(text);
         }
     }
 }
