@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Factory.FactoryMethod
 {
-    public static class AccountFactory
+    public class AccountFactory : IAccountFactory
     {
-        public static Account CreateAccount(string name, int age, string? profilePicture, AccountType type)
+        public Account Create(string name, int age, string? profilePicture, AccountType type)
         {
             return type switch
             {

@@ -8,8 +8,8 @@ namespace Factory
     {
         static void Main(string[] args)
         {
-            IAccountFactory vipAccountFactory = new VipAccountFactory("Tom", 20, "King.jpeg");
-            Account vipAccount = vipAccountFactory.Create();
+            IAccountFactory factory = new AccountFactory();
+            Account account = factory.Create("Jack", 23, "King.jpg", AccountType.VIP);
 
             Tank heavyTank = new Tank(new HeavyTankFactory());
             heavyTank.Weapon.Shoot();
