@@ -9,7 +9,7 @@ namespace Decorator
 
         public override string GetMessage()
         {
-            string text = message.GetMessage();
+            string text = base.GetMessage();
 
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             if (text.Contains(":-)"))

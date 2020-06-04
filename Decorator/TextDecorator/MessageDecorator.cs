@@ -1,8 +1,8 @@
 ﻿namespace Decorator
 {
-    public class MessageDecorator : IMessage
+    public abstract class MessageDecorator : IMessage
     {
-        protected IMessage message;
+        private readonly IMessage message;
 
         public MessageDecorator(IMessage message)
         {
