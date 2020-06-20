@@ -13,11 +13,11 @@ namespace Singleton
         {
             lock (syncRoot)
             {
-                using StreamWriter logger = new StreamWriter(@"Logger.txt", true, System.Text.Encoding.Default);
-                    logger.WriteLine("Log ID: " + LogID++ + " Date:" + DateTime.Now + " " + logMessage);
+                using StreamWriter logger = new StreamWriter("Logger.txt", true, System.Text.Encoding.Default);
+                    logger.WriteLine("Log ID: " + LogID + " Date:" + DateTime.Now + " " + logMessage);
             }           
         }
 
-        public long LogID { get; set; } = 1;
+        public Guid LogID { get => Guid.NewGuid(); }
     }
 }
