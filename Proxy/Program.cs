@@ -10,7 +10,8 @@ namespace Proxy
     {
         static void Main(string[] args)
         {
-            WebRequest webRequest = new Proxy().Create();
+            var request = (HttpWebRequest)WebRequest.Create("www.google.com");
+            WebRequest webRequest = new Proxy(request).Create();
         }
     }
 }

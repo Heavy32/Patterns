@@ -4,16 +4,18 @@ namespace Proxy
 {
     class Proxy : WebRequest
     {
-        private readonly Request request;
+        private readonly WebRequest request;
 
-        public Proxy()
+        public Proxy(WebRequest request)
         {
-            request = new Request();
+            this.request = request;
         }
 
         public WebRequest Create()
         {
-            return request.RequestWithProxy();
+            WebRequest request = Create("https://docs.microsoft.com");
+            request.Headers["Proxied"] = "true";
+            return (HttpWebRequest)request;
         }
     }
 }
