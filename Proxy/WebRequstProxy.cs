@@ -2,11 +2,11 @@
 
 namespace Proxy
 {
-    class Proxy : WebRequest
+    class WebRequstProxy : WebRequest
     {
         private readonly WebRequest request;
 
-        public Proxy(WebRequest request)
+        public WebRequstProxy(WebRequest request)
         {
             this.request = request;
         }

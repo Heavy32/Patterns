@@ -11,7 +11,7 @@ namespace Proxy
         static void Main(string[] args)
         {
             var request = (HttpWebRequest)WebRequest.Create("www.google.com");
-            WebRequest webRequest = new Proxy(request).Create();
+            WebRequest webRequest = new WebRequstProxy(request).Create();
         }
     }
 }
